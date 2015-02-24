@@ -1,0 +1,253 @@
+/*	
+	Theme Name: Developer Bridge
+	Author: Robert Davis
+	Author URI: http://developerbridge.com/
+	Version: 1.0
+	License: GNU General Public License
+	License URI: https://www.gnu.org/licenses/gpl.html
+
+	TABLE OF CONTENTS
+	1. Reset
+	2. Navigation
+	3. Banner							*/
+
+
+/*	================================== 
+		1. RESET
+	==================================	*/
+
+
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		font-size: 100%;
+		font: inherit;
+		padding: 0;
+		border: 0;
+		margin: 0;
+		vertical-align: baseline
+	}
+	body {
+		line-height: 1
+	}
+	ol, ul {
+		list-style: none
+	}
+	blockquote, q {
+		quotes: none
+	}
+	blockquote:before, blockquote:after, q:before, q:after {
+		content: '';
+		content: none
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0
+	}
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block
+	}
+	.clear {
+		clear: both
+	}
+	body {
+		font: 300 14px/22px "Open Sans", sans-serif;
+		color: #666;
+	}
+	a:hover {
+		text-decoration: none;
+	}
+	
+	
+/*	================================== 
+		2. Navigation
+	==================================	*/
+
+
+	.navbar-default { 
+		background: none !important;
+		border: 0 !important;
+	}
+
+	.navbar-nav > li > a {
+		color: #fff !important;
+		font: 400 12px/22px "Montserrat", serif;
+		text-transform: uppercase;
+	}
+	
+	
+/*	================================== 
+		3. Banner
+	==================================	*/
+
+
+	.header {
+		background: url(images/bridge.jpg) 0 0 no-repeat;
+		width: 100%;
+		height: auto;
+		font: 700 84px/100px "Montserrat", serif;
+		text-align: center;
+		color: #fff;
+		text-transform: uppercase;
+	}
+	.mask {
+		height: 100%;
+		width: 100%;
+		background: rgba(23,22,32,0.85);
+		padding: 100px 0;
+	}
+	.site-description {
+		font: 400 italic 24px/32px "Droid Serif", serif;
+		border-radius: 5px;
+		text-transform: lowercase;
+		margin: 10px auto;
+		color: #FEF7DF;
+	}
+	.circle {
+		background: #FEF7DF;
+		height: 180px;
+		width: 180px;
+		border-radius: 250px;
+		border: 5px solid #24a8b5;
+		margin: 0 auto 30px;
+		padding-top: 35px;
+	}
+	.circle img {
+		display: block;
+		margin: 0 auto;
+		width: 120px;
+	}
+	.button, .ecae-link {
+		background: #DB574A;
+		border-radius: 3px;
+		color: #fff;
+		font: 400 16px/16px "Montserrat", serif;
+		padding: 20px 30px;
+		text-align: center;
+	}
+	.ecae-link {
+		padding: 10px;
+		text-transform: uppercase;
+		display: block;
+		margin: 15px auto 15px 0 !important;
+		width: 100%;
+		max-width: 180px;
+		font: 400 12px/12px "Montserrat", serif;
+	}
+	.ecae-button {
+		width: 166px;
+		float: left;
+		margin-right: 5px;
+		min-height: 0 !important;
+	}
+	.button:hover, .ecae-link:hover {
+		color: #fff;
+		background: #24a8b5;
+	}
+	.hover {
+		transition: 0.3s;
+		-moz-transition: 0.3s;
+		-webkit-transition: 0.3s;
+		-ms-transition: 0.3s;
+	}
+	.group {
+		padding: 40px 0;
+		background: url(images/crossword.png);
+		width: 100%;
+		text-align: center;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.group i { 
+		line-height: 60px;
+		color: #24a8b5; 
+	}
+	.content {
+		padding: 100px 0;
+		background: #efefef;
+	}
+	.blog-post {
+		background: #fff;
+		border: 1px solid #ddd;
+		border-top: 5px solid #283b6d;
+		border-radius: 3px;
+		padding: 20px;
+		width: 100%;
+		margin: 60px 0;
+	}
+	.blog-post p { min-height: 230px; }
+	.blog-image-thumbnail {
+		padding: 10px 0;
+		margin: 10px 0;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		height: 179px;
+	}
+	.blog-image-thumbnail img {
+		width: 100%;
+		height: auto;
+	}
+	.entry-title, .entry-title a {
+		color: #121212;
+		font: 400 22px/28px "Open Sans", sans-serif;
+		padding-bottom: 5px;
+	}
+	.entry-footer {
+		border-top: 1px solid #ddd;
+		padding-top: 10px;
+	}
+	.blog-post .fa {
+		color: #fff;
+		border-radius: 3px;
+		padding: 8px;
+		margin: 15px 2px 0 0;
+		width: 32px;
+		text-align: center;
+		font-size: 16px;
+		line-height: 16px;
+	}
+	.blog-post .fa:hover {
+		color: #333;
+		background: #efefef;	
+	}
+	.facebook { background: #3b5998; }
+	.twitter { background: #00acee; }
+	.google { background: #dd4b39; }
+	.linkedin { background: #007bb6; }
+	.welcome-title {
+		color: #333;
+		text-align: center;
+		font: 700 30px/38px "Montserrat", sans-serif;
+		padding-bottom: 30px;	
+		text-transform: uppercase;
+	}
+	.welcome-tagline {
+		font: 400 italic 20px/26px "Droid Serif", sans-serif;	
+		text-align: center;
+		padding-bottom: 30px;
+	}
+	.entry-date, .author.vcard {
+		font-weight: 500;	
+	}
+	.prefooter .content { 
+		color: #fff;
+		background: #283b6d; 
+	}
+	.widget-title { 
+		font: 500 18px/24px "Open Sans", sans-serif;
+		padding-bottom: 8px;
+		border-bottom: 3px solid #24a8b5;
+		margin-bottom: 8px;
+	}
+	.widget-container a { 
+		color: #fff;
+	}
+	.widget-container a:hover {
+		color: #DB574A;
+	}
+	#footer {
+		background: #16203b;
+		text-align: center;
+		font-weight: 500;
+		color: #fff;
+		padding: 20px 0;	
+	}
