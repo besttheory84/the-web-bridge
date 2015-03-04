@@ -12,7 +12,7 @@
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
@@ -22,7 +22,7 @@
 
     <link href="<?php echo get_template_directory_uri(); ?>/animate.css" rel="stylesheet" type="text/css" />
 
-    <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo get_template_directory_uri(); ?>/main.css" rel="stylesheet" type="text/css" />
 
     <?php wp_head(); ?>
 
@@ -32,100 +32,54 @@
 
 <body <?php body_class(); ?> id="page-top">
 
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <? if(is_front_page()) { ?>
+	<header class="header" role="banner">
+    <? } else { ?>
+    <header class="inner-header" role="banner">
+    <? } ?>
 
-        <div class="container">
+        <div class="mask">
 
-            <div class="navbar-header page-scroll">
+            <section class="branding">
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <div class="container">
 
-                    <span class="sr-only">Toggle navigation</span>
+                    <div class="row">
 
-                    <span class="icon-bar"></span>
+                        <div class="col-md-12">
 
-                    <span class="icon-bar"></span>
+                            <a href="/"><div class="site-title wow animate zoomIn">
 
-                    <span class="icon-bar"></span>
+                                <?php if ( ! is_singular() ) { echo '<h1>'; } ?>
 
-                </button>
+                                <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 
-                <!-- <a class="navbar-brand" href="<? echo home_url(); ?>"><? bloginfo('name'); ?></a> -->
+                                <?php if ( ! is_singular() ) { echo '</h1>'; } ?>
 
-            </div>
+                                </div></a>
+                            
+                            <? if(is_front_page()) { ?>
+                            <div class="site-description wow animated zoomIn">
 
-        
+                                <?php bloginfo( 'description' ); ?>
 
-        <?	wp_nav_menu( array(
+                            </div>
 
-                'menu'	=> 'primary',
+                            <a class="button hover" href="#featured">Learn more <i class="fa fa-angle-down"></i></a>
+                            <? } ?>
 
-                'theme_location'    => 'primary',
+                        </div>
 
-                'depth'             => 2,
+                    </div>
 
-                'container'         => 'div',
+                </div>
 
-                'container_class'   => 'collapse navbar-collapse',
-
-                'container_id'      => 'bs-example-navbar-collapse-1',
-
-                'menu_class'        => 'nav navbar-nav navbar-right',
-
-                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-
-                'walker'            => new wp_bootstrap_navwalker())); ?>
+            </section>
 
         </div>
-
-    </nav>
-
-    
-
-	<header class="header" role="banner">
-
-	<div class="mask">
-
-		<section class="branding">
-
-        	<div class="container">
-
-            	<div class="row">
-
-                	<div class="col-md-12">
-
-                        <div class="circle animated zoomInDown">
-
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/bridge.svg" />
-
-                        </div>
-
-                        <div class="site-title">
-
-                            <?php if ( ! is_singular() ) { echo '<h1>'; } ?>
-
-                            <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-
-                            <?php if ( ! is_singular() ) { echo '</h1>'; } ?>
-
-                        </div>
-
-                        <div class="site-description">
-
-                            <?php bloginfo( 'description' ); ?>
-
-                        </div>
-
-                        <a class="button hover" href="#featured">Check everything out <i class="fa fa-angle-down"></i></a>
-
-                  	</div>
-
-               	</div>
-
-           	</div>
-
-		</section>
-
-	</div>
+        
+        <? if(is_front_page()) { ?>
+            <a href="#blog"><i class="fa fa-chevron-down arrow-down animated bounceInUp"></i></a>
+        <? } ?>
 
 	</header>

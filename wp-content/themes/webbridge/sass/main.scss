@@ -1,34 +1,524 @@
-/*	
-	Theme Name: Developer Bridge
-	Author: Robert Davis
-	Author URI: http://developerbridge.com/
-	Version: 1.0
-	License: GNU General Public License
-	License URI: https://www.gnu.org/licenses/gpl.html
+    $opensans: "Opens Sans", sans-serif;
+    $montserrat: "Montserrat", serif;
+    $droid: "Droid Sans", sans-serif;
+    $gray: #666;
+    $lightgray: #ddd;
+    $white: #fff;
+    $beige: #FEF7DF;
+    $green: #24a8b5;
+    $red: #DB574A;
+    $blue: #283b6d;
 
-	TABLE OF CONTENTS
-	1. Reset
-	2. Navigation
-	3. Banner							*/
+    @mixin hover() {
+        transition: 0.3s;
+		-moz-transition: 0.3s;
+		-webkit-transition: 0.3s;
+		-ms-transition: 0.3s;    
+    }
 
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        font-size: 100%;
+        font: inherit;
+        padding: 0;
+        border: 0;
+        margin: 0;
+        vertical-align: baseline
+    }
+    body {
+        font: 300 14px/22px $opensans;
+        color: $gray;
 
-/*	================================== 
-		1. RESET
-	==================================	*/
-
-
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-		font-size: 100%;
-		font: inherit;
-		padding: 0;
-		border: 0;
-		margin: 0;
-		vertical-align: baseline
+        a:hover, a:visited {
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        } 
+        .clear {
+            clear: both;
+            
+            &:after {
+                visibility: hidden;
+                display: block;
+                font-size: 0;
+                content: " ";
+                clear: both;
+                height: 0;
+            }  
+        }
+    }
+	.hover {
+        @include hover();
 	}
-	body {
-		font: 300 14px/22px "Open Sans", sans-serif;
-		color: #666;
+    .navbar-default { 
+        background: none !important;
+        border: 0 !important;
+    }
+    .navbar-nav > li > a {
+        color: $white !important;
+        font: 400 12px/22px $montserrat;
+        text-transform: uppercase;
+    }
+    
+    /* Header Elements */
+	.header, .inner-header {
+		background: url(images/background4.jpg) 0 0 no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+		width: 100%;
+		height: 100%;
+		font: 700 84px/100px $montserrat;
+		text-align: center;
+		color: $white;
+		text-transform: uppercase;
+        position: relative;
+        
+        @media all and (max-width: 768px) {
+            background-position: top center;
+            background-size: auto;
+            background-attachment: inherit;
+        }
+	
+        .mask {
+            background: rgba(0,0,0,0.2);
+            padding: 50px 0;
+            position: absolute;
+            width: 100%;
+            
+            @media all and (max-width: 768px) {
+                background: none;
+            }
+        }
+        
+        .site-title {
+            
+            @media all and (max-width: 1000px) {
+                font-size: 60px;
+                line-height: 70px;
+            }
+            @media all and (max-width: 600px) {
+                font-size: 32px;   
+                line-height: 40px;
+            }
+        }
+        
+        .site-description {
+            font: 400 24px/32px $droid;
+            border-radius: 5px;
+            text-transform: lowercase;
+            margin: 10px auto;
+            color: $beige;
+            
+            @media all and (max-width: 600px) {
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+        
+        .circle {
+            background: $beige;
+            height: 180px;
+            width: 180px;
+            border-radius: 250px;
+            border: 5px solid $green;
+            margin: 0 auto 30px;
+            padding-top: 35px;
+	   
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 120px;
+            }
+        }
+        .arrow-down {
+            top: 85%;
+            position: absolute;
+            right: 0;
+            left: 0;
+            text-shadow: 0px 0px 4px rgba(0,0,0,0.9);
+            cursor: pointer;
+            
+            &:hover {
+                opacity: 0.7;   
+            }
+            
+            @media all and (max-width: 980px) {
+                top: 70%;   
+            }
+        }
+        
+        a {
+            color: $white;  
+            
+            &:visited {
+                color: $white; 
+            }
+        }
+    }
+
+    .inner-header {
+        background-position: 0px -250px;
+        padding: 50px 0;
+        
+        .mask {
+            position: static;
+            padding: 4% 0;
+        }
+    }
+
+    /* Group Elements */
+	.group {
+		padding: 80px 0;
+		background: url(images/crossword.png);
+		width: 100%;
+		text-align: justify;
+        font: 500 14px/24px $opensans;
+        border-bottom: 1px solid #efefef;
+        
+        .equation {
+            color: $red;  
+            padding: 25px 0 50px;
+            
+            .fa-5x {
+            
+                @media all and (max-width: 600px) {
+                    font-size: 40px;   
+                }
+            }
+        }
+        
+        span {
+            color: $red;
+            line-height: 60px;
+            font-size: 60px;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+            top: -8px;
+            
+            @media all and (max-width: 600px) {
+                font-size: 40px;  
+                margin: 0 5px;
+            }
+        }
+        
+        h3 {
+            font: 700 16px/24px $montserrat;  
+            color: #121212;
+            text-transform: uppercase;       
+        }
+        
+        img {
+            width: 200px;
+            border-radius: 250px;
+            border: 5px solid $white;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+            display: block;
+            margin: 0 auto 25px;
+        }
+        
+        &.prefooter i {
+            font-size: 20px;
+            background: $red;
+            border-radius: 250px;
+            width: 36px;
+            padding: 8px;
+            text-align: center;
+            color: $white;
+            
+            &:hover {
+                background: $lightgray;
+                color: #333;
+            }
+        }
+    }
+
+    .icons {
+        padding: 80px 0;
+        border-bottom: 1px solid #efefef;
+        text-align: center;
+        background: url(images/crossword.png);
+        
+        i { 
+            line-height: 60px;
+            color: $red; 
+            margin: 20px 0;
+        }
+    }
+
+    /* Buttons and Links */
+	.button {
+		background: $red;
+		border-radius: 3px;
+		color: $white;
+		font: 400 16px/16px $montserrat;
+		padding: 20px 30px;
+		text-align: center;
+        
+        &:hover {
+		  color: $white;
+		  background: $green; 
+        }
 	}
-	a:hover {
-		text-decoration: none;
+	.ecae-link {
+        @extend .button;
+		padding: 10px;
+		text-transform: uppercase;
+		display: block;
+		margin: 15px auto 15px 0 !important;
+		width: 100%;
+		max-width: 180px;
+		font: 400 12px/12px $montserrat;
+        
+        @media all and (max-width: 1200px) {
+            max-width: none;   
+        }
+	}
+	.ecae-button {
+		width: 166px;
+		float: left;
+		min-height: 0 !important;
+        
+        @media all and (max-width: 1200px) {
+            width: 100%;
+            float: none;
+        }
+	}
+
+    .welcome-title {
+        color: #333;
+        text-align: center;
+        font: 700 30px/38px $montserrat;
+        padding-bottom: 30px;	
+        text-transform: uppercase;
+    }
+    .welcome-tagline, .textwidget {
+        font: 300 16px/30px $droid;	
+        padding-bottom: 30px;
+    }
+
+    .slide1, .slide2, .slide3 {
+		background: url(images/background2.jpg) top center no-repeat;
+        background-size: cover;
+        background-attachment: fixed; 
+        
+        @media all and (max-width: 768px) {
+            display: none;
+        }
+        
+        h1 {
+            color: $white;
+            text-shadow: 0px 0px 5px rgba(0,0,0,0.8);   
+            font: 700 84px/100px $montserrat;
+            text-transform: uppercase;
+            
+            @media all and (max-width: 768px) {
+                font-size: 60px;
+                line-height: 74px;
+            }
+            @media all and (max-width: 480px) {
+                font-size: 40px;
+                line-height: 54px;
+            }
+        }
+    }
+
+    .slide2 {
+        background: url(images/background1.jpg) top center no-repeat;    
+        background-size: cover;
+        background-attachment: fixed;   
+    }
+
+    .slide3 {
+        background: url(images/background3.jpg) top center no-repeat;    
+        background-size: cover;
+        background-attachment: fixed;   
+    }
+
+    /* Content Elements */
+    .content {
+        padding: 100px 0;
+		background: url(images/crossword.png);
+        
+        @media all and (max-width: 768px) {
+            padding: 50px 0;   
+        }
+    }
+
+    /* Blog Post Elements */
+	.blog-post {
+		background: $white;
+		border-radius: 3px;
+		padding: 20px;
+		width: 100%;
+		margin: 60px 0;
+        border: 1px solid $lightgray;
+	
+        p { 
+            min-height: 250px; 
+            
+            @media all and (max-width: 980px) {
+                min-height: 0;   
+            }
+        }
+        
+        .fa {
+    		color: $white;
+            border-radius: 3px;
+            padding: 8px;
+            margin: 15px 0 0 5px;
+            width: 32px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 16px;  
+            float: right;
+            
+            &:hover {
+                color: #333;
+                background: #efefef;	   
+            }
+            &:nth-child(4) {
+                margin-right: 0;   
+            }
+        }
+    }
+
+    /* Blog Image Thumbnail */
+	.blog-image-thumbnail {
+		padding: 10px 0;
+		margin: 10px 0;
+		border-top: 1px solid $lightgray;
+		border-bottom: 1px solid $lightgray;
+		height: 179px;
+        
+        @media all and (max-width: 980px) {
+            height: auto;   
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+	   }
+    }
+
+    .the-only {
+        
+        .entry-title, .entry-title a {
+            font-size: 40px;
+            line-height: 50px;
+            text-align: center;
+            padding-bottom: 40px;
+            
+            @media all and (max-width: 768px) {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+        
+        .entry-date {
+            font: 500 20px/26px $opensans;
+            text-align: center;
+            display: block;
+        }
+    }
+
+    .the-only-post {
+        @extend .blog-post;
+
+        p {
+            min-height: 0;
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 30px;
+            
+            strong {
+                font-weight: 600;   
+            }
+        }
+        ul {
+            margin: 0 0 25px 40px; 
+            
+            li {
+                font-size: 16px;
+                padding: 3px 0;
+                list-style-type: disc;
+            }
+        }   
+        
+        .blog-image-thumbnail {
+            height: auto;
+            border-top: 0;
+            margin: 0 0 30px;
+            padding: 0 0 15px;
+            
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    
+
+    /* Entry Elements */
+	.entry-title {
+		color: #121212;
+		font: 500 20px/28px $montserrat;
+		padding-bottom: 5px;
+        
+        a {
+            @extend .entry-title;  
+        }   
+	}
+	.entry-footer {
+		border-top: 1px solid $lightgray;
+		padding-top: 10px;
+        margin-top: 20px;
+	}
+	.entry-date, .author.vcard {
+		font-weight: 500;	
+	}
+
+    /* Social Media */
+	.facebook { background: #3b5998; }
+	.twitter { background: #00acee; }
+	.google { background: #dd4b39; }
+	.linkedin { background: #007bb6; }
+
+    /* Widget Elements */
+    .widget {
+     
+        h4 {
+            font: 700 16px/24px $montserrat;  
+            color: #121212;
+            text-transform: uppercase; 
+            padding-bottom: 10px;
+        }
+    }
+	.widget-title { 
+		font: 500 18px/24px $opensans;
+		padding-bottom: 8px;
+		border-bottom: 3px solid $green;
+		margin-bottom: 8px;
+	}
+	.widget-container a { 
+		color: $gray;
+	
+        &:hover {
+            color: $red;
+        }
+	}
+
+	.prefooter .content { 
+		color: #333;
+		background: url(images/crossword.png);
+        border-top: 1px solid $gray;
+	}
+	#footer {
+		background: #16203b;
+		text-align: center;
+		font-weight: 500;
+		color: $white;
+		padding: 20px 0;	
 	}

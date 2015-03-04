@@ -1,19 +1,3 @@
-/*	
-	Theme Name: Developer Bridge
-	Author: Robert Davis
-	Author URI: http://developerbridge.com/
-	Version: 1.0
-	License: GNU General Public License
-	License URI: https://www.gnu.org/licenses/gpl.html
-
-	TABLE OF CONTENTS
-	1. Reset
-	2. Navigation
-	3. Banner							*/
-/*	================================== 
-		1. RESET
-	==================================	*/
-/* line 20, sass/main.scss */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   font-size: 100%;
   font: inherit;
@@ -23,13 +7,492 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
 }
 
-/* line 28, sass/main.scss */
 body {
-  font: 300 14px/22px "Open Sans", sans-serif;
-  color: #666;
+  font: 300 14px/22px "Opens Sans", sans-serif;
+  color: #666666;
+}
+body a:hover, body a:visited {
+  text-decoration: none;
+}
+body li {
+  list-style: none;
+}
+body .clear {
+  clear: both;
+}
+body .clear:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
 
-/* line 32, sass/main.scss */
-a:hover {
-  text-decoration: none;
+.hover {
+  transition: 0.3s;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
+}
+
+.navbar-default {
+  background: none !important;
+  border: 0 !important;
+}
+
+.navbar-nav > li > a {
+  color: white !important;
+  font: 400 12px/22px "Montserrat", serif;
+  text-transform: uppercase;
+}
+
+/* Header Elements */
+.header, .inner-header {
+  background: url(images/background4.jpg) 0 0 no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  font: 700 84px/100px "Montserrat", serif;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+}
+@media all and (max-width: 768px) {
+  .header, .inner-header {
+    background-position: top center;
+    background-size: auto;
+    background-attachment: inherit;
+  }
+}
+.header .mask, .inner-header .mask {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 50px 0;
+  position: absolute;
+  width: 100%;
+}
+@media all and (max-width: 768px) {
+  .header .mask, .inner-header .mask {
+    background: none;
+  }
+}
+@media all and (max-width: 1000px) {
+  .header .site-title, .inner-header .site-title {
+    font-size: 60px;
+    line-height: 70px;
+  }
+}
+@media all and (max-width: 600px) {
+  .header .site-title, .inner-header .site-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+.header .site-description, .inner-header .site-description {
+  font: 400 24px/32px "Droid Sans", sans-serif;
+  border-radius: 5px;
+  text-transform: lowercase;
+  margin: 10px auto;
+  color: #fef7df;
+}
+@media all and (max-width: 600px) {
+  .header .site-description, .inner-header .site-description {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+.header .circle, .inner-header .circle {
+  background: #fef7df;
+  height: 180px;
+  width: 180px;
+  border-radius: 250px;
+  border: 5px solid #24a8b5;
+  margin: 0 auto 30px;
+  padding-top: 35px;
+}
+.header .circle img, .inner-header .circle img {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+}
+.header .arrow-down, .inner-header .arrow-down {
+  top: 85%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+.header .arrow-down:hover, .inner-header .arrow-down:hover {
+  opacity: 0.7;
+}
+@media all and (max-width: 980px) {
+  .header .arrow-down, .inner-header .arrow-down {
+    top: 70%;
+  }
+}
+.header a, .inner-header a {
+  color: white;
+}
+.header a:visited, .inner-header a:visited {
+  color: white;
+}
+
+.inner-header {
+  background-position: 0px -250px;
+  padding: 50px 0;
+}
+.inner-header .mask {
+  position: static;
+  padding: 4% 0;
+}
+
+/* Group Elements */
+.group {
+  padding: 80px 0;
+  background: url(images/crossword.png);
+  width: 100%;
+  text-align: justify;
+  font: 500 14px/24px "Opens Sans", sans-serif;
+  border-bottom: 1px solid #efefef;
+}
+.group .equation {
+  color: #db574a;
+  padding: 25px 0 50px;
+}
+@media all and (max-width: 600px) {
+  .group .equation .fa-5x {
+    font-size: 40px;
+  }
+}
+.group span {
+  color: #db574a;
+  line-height: 60px;
+  font-size: 60px;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+  top: -8px;
+}
+@media all and (max-width: 600px) {
+  .group span {
+    font-size: 40px;
+    margin: 0 5px;
+  }
+}
+.group h3 {
+  font: 700 16px/24px "Montserrat", serif;
+  color: #121212;
+  text-transform: uppercase;
+}
+.group img {
+  width: 200px;
+  border-radius: 250px;
+  border: 5px solid white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+  display: block;
+  margin: 0 auto 25px;
+}
+.group.prefooter i {
+  font-size: 20px;
+  background: #db574a;
+  border-radius: 250px;
+  width: 36px;
+  padding: 8px;
+  text-align: center;
+  color: white;
+}
+.group.prefooter i:hover {
+  background: #dddddd;
+  color: #333;
+}
+
+.icons {
+  padding: 80px 0;
+  border-bottom: 1px solid #efefef;
+  text-align: center;
+  background: url(images/crossword.png);
+}
+.icons i {
+  line-height: 60px;
+  color: #db574a;
+  margin: 20px 0;
+}
+
+/* Buttons and Links */
+.button, .ecae-link {
+  background: #db574a;
+  border-radius: 3px;
+  color: white;
+  font: 400 16px/16px "Montserrat", serif;
+  padding: 20px 30px;
+  text-align: center;
+}
+.button:hover, .ecae-link:hover {
+  color: white;
+  background: #24a8b5;
+}
+
+.ecae-link {
+  padding: 10px;
+  text-transform: uppercase;
+  display: block;
+  margin: 15px auto 15px 0 !important;
+  width: 100%;
+  max-width: 180px;
+  font: 400 12px/12px "Montserrat", serif;
+}
+@media all and (max-width: 1200px) {
+  .ecae-link {
+    max-width: none;
+  }
+}
+
+.ecae-button {
+  width: 166px;
+  float: left;
+  min-height: 0 !important;
+}
+@media all and (max-width: 1200px) {
+  .ecae-button {
+    width: 100%;
+    float: none;
+  }
+}
+
+.welcome-title {
+  color: #333;
+  text-align: center;
+  font: 700 30px/38px "Montserrat", serif;
+  padding-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.welcome-tagline, .textwidget {
+  font: 300 16px/30px "Droid Sans", sans-serif;
+  padding-bottom: 30px;
+}
+
+.slide1, .slide2, .slide3 {
+  background: url(images/background2.jpg) top center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+@media all and (max-width: 768px) {
+  .slide1, .slide2, .slide3 {
+    display: none;
+  }
+}
+.slide1 h1, .slide2 h1, .slide3 h1 {
+  color: white;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+  font: 700 84px/100px "Montserrat", serif;
+  text-transform: uppercase;
+}
+@media all and (max-width: 768px) {
+  .slide1 h1, .slide2 h1, .slide3 h1 {
+    font-size: 60px;
+    line-height: 74px;
+  }
+}
+@media all and (max-width: 480px) {
+  .slide1 h1, .slide2 h1, .slide3 h1 {
+    font-size: 40px;
+    line-height: 54px;
+  }
+}
+
+.slide2 {
+  background: url(images/background1.jpg) top center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.slide3 {
+  background: url(images/background3.jpg) top center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Content Elements */
+.content {
+  padding: 100px 0;
+  background: url(images/crossword.png);
+}
+@media all and (max-width: 768px) {
+  .content {
+    padding: 50px 0;
+  }
+}
+
+/* Blog Post Elements */
+.blog-post, .the-only-post {
+  background: white;
+  border-radius: 3px;
+  padding: 20px;
+  width: 100%;
+  margin: 60px 0;
+  border: 1px solid #dddddd;
+}
+.blog-post p, .the-only-post p {
+  min-height: 250px;
+}
+@media all and (max-width: 980px) {
+  .blog-post p, .the-only-post p {
+    min-height: 0;
+  }
+}
+.blog-post .fa, .the-only-post .fa {
+  color: white;
+  border-radius: 3px;
+  padding: 8px;
+  margin: 15px 0 0 5px;
+  width: 32px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  float: right;
+}
+.blog-post .fa:hover, .the-only-post .fa:hover {
+  color: #333;
+  background: #efefef;
+}
+.blog-post .fa:nth-child(4), .the-only-post .fa:nth-child(4) {
+  margin-right: 0;
+}
+
+/* Blog Image Thumbnail */
+.blog-image-thumbnail {
+  padding: 10px 0;
+  margin: 10px 0;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  height: 179px;
+}
+@media all and (max-width: 980px) {
+  .blog-image-thumbnail {
+    height: auto;
+  }
+}
+.blog-image-thumbnail img {
+  width: 100%;
+  height: auto;
+}
+
+.the-only .entry-title, .the-only .entry-title a, .entry-title .the-only a, .the-only .entry-title a, .entry-title .the-only a a {
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  padding-bottom: 40px;
+}
+@media all and (max-width: 768px) {
+  .the-only .entry-title, .the-only .entry-title a, .entry-title .the-only a, .the-only .entry-title a, .entry-title .the-only a a {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+.the-only .entry-date {
+  font: 500 20px/26px "Opens Sans", sans-serif;
+  text-align: center;
+  display: block;
+}
+
+.the-only-post p {
+  min-height: 0;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 30px;
+}
+.the-only-post p strong {
+  font-weight: 600;
+}
+.the-only-post ul {
+  margin: 0 0 25px 40px;
+}
+.the-only-post ul li {
+  font-size: 16px;
+  padding: 3px 0;
+  list-style-type: disc;
+}
+.the-only-post .blog-image-thumbnail {
+  height: auto;
+  border-top: 0;
+  margin: 0 0 30px;
+  padding: 0 0 15px;
+}
+.the-only-post .blog-image-thumbnail img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Entry Elements */
+.entry-title, .entry-title a {
+  color: #121212;
+  font: 500 20px/28px "Montserrat", serif;
+  padding-bottom: 5px;
+}
+
+.entry-footer {
+  border-top: 1px solid #dddddd;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+.entry-date, .author.vcard {
+  font-weight: 500;
+}
+
+/* Social Media */
+.facebook {
+  background: #3b5998;
+}
+
+.twitter {
+  background: #00acee;
+}
+
+.google {
+  background: #dd4b39;
+}
+
+.linkedin {
+  background: #007bb6;
+}
+
+/* Widget Elements */
+.widget h4 {
+  font: 700 16px/24px "Montserrat", serif;
+  color: #121212;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+.widget-title {
+  font: 500 18px/24px "Opens Sans", sans-serif;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #24a8b5;
+  margin-bottom: 8px;
+}
+
+.widget-container a {
+  color: #666666;
+}
+.widget-container a:hover {
+  color: #db574a;
+}
+
+.prefooter .content {
+  color: #333;
+  background: url(images/crossword.png);
+  border-top: 1px solid #666666;
+}
+
+#footer {
+  background: #16203b;
+  text-align: center;
+  font-weight: 500;
+  color: white;
+  padding: 20px 0;
 }
